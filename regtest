@@ -1,0 +1,14 @@
+#!/bin/sh
+mkdir -p test
+pushd test
+rm *.ly *.ps *.pdf
+date > test.log
+../fing  --statistics --extended --output=unmerry_x  >> test.log
+../fing  --statistics --back-to-back --extended --output=unmerry_x_b2b>> test.log
+../fing  --statistics --back-to-back --output=unmerry_b2b>> test.log
+../fing  --statistics --output=unmerry>> test.log
+../fing  --statistics --back-to-back --extended --output=sheets_x_b2b --test=sheets>> test.log
+../fing  --statistics --extended --output=sheets_x --test=sheets>> test.log
+lilypond *.ly
+tar czvf testresults.tgz *.ly *.pdf test.log
+popd

@@ -1,0 +1,91 @@
+2006-07-08  Vince Negri  <vn@pankot>
+
+	* algorithm.cpp, chunk.cpp, chunk.h, debugging.cpp, engine.cpp, engine.h, handmodel.cpp, handmodelx.cpp, instrumentdefn.cpp, instrumentdefn.h, note.cpp, note.h, types.h, vn_algorithm.cpp:
+	Support a pure STL interface into the library, so that non-QT apps can use it.
+
+2006-06-11  Vince Negri  <vn@pankot>
+
+	* engine.cpp, engine.h:
+	Initial position had an incorrect aversion for 7th fret!
+	Also improve initial position selection heuristic.
+
+2006-04-14  Vince Negri  <vn@pankot>
+
+	* constraints.h, engine.cpp:
+	Start using the Constraints class for sundry options.
+
+	* chunk.cpp, debugging.cpp, engine.cpp, note.cpp, types.h, vn_algorithm.cpp:
+	Clean up some literal strings
+
+	* engine.cpp, note.cpp, note.h:
+	Optimisation: short-cut to the next pass when we hit a restart point
+	and an auto-hint has already been inserted.
+
+2006-04-03  Vince Negri  <vn@pankot>
+
+	* chunk.h, constraints.h, engine.h, instrumentdefn.cpp, instrumentdefn.h, note.h, types.h:
+	Merge in changes to allow QT4 build
+
+2006-04-02  Vince Negri  <vn@pankot>
+
+	* engine.cpp:
+	Allow start of notes and start of free chunk to be hinted (prefer high/low position)
+	Make inhibition of back-to-back gliss smarter, and optional.
+
+	* note.cpp, note.h:
+	Expose hint status of a note in a more encapsulated way
+	(will help later when we change to a bitmask for speed)
+
+	* vn_algorithm.cpp: cleanup
+
+	* engine.cpp: Make quiet mode a command-line option
+	Try to avoid inserting pointless autohints when they are unlikely to help
+	Don't purge autohints past a "=" (start again) annotation.
+
+2006-04-01  Vince Negri  <vn@pankot>
+
+	* vn_algorithm.cpp:
+	Always start afresh at a "=" hint. Otherwise a demented fingering that nevertheless allows
+	a run through the "=" may get preferred.
+
+	* vn_algorithm.cpp:
+	Spot slide opportunities when shifting down as well as up.
+
+	* vn_algorithm.cpp:
+	Make sure repeated notes are always played with a single fingering.
+	This avoids strange fingerings in some cases.
+
+	* vn_algorithm.cpp: Improve evaluation of LH shift methods.
+
+	* engine.cpp: Enable status output to be supressed.
+
+	* handmodel.cpp, handmodel.h, vn_algorithm.cpp:
+	Move the static finger/stretch penalties into HandModel where they belong.
+
+	* engine.cpp, engine.h:
+	Allow the max LH shift to be set as a parameter.
+
+	* vn_algorithm.cpp:
+	Try out penalty that catches nasty LH stretches when changing position.
+
+	* engine.cpp: Change the smallest autohintable chunk.
+	Allow autohinting to reach back through model-enforced position changes (not manual hints)
+
+	* vn_algorithm.cpp: Clean up some comments and magic numbers
+
+	* engine.cpp, engine.h:
+	Break out hint up/ hint down weightings to protected virtual functions.
+	Makes life easier for others to experiment with the auto-hint function.
+
+	* engine.h: add test harness options
+
+	* algorithm.h, engine.cpp, note.h, vn_algorithm.cpp, vn_algorithm.h:
+	Merge in lead-in note changes
+
+2006-03-28  Vince Negri  <vn@pankot>
+
+	* engine.cpp: Try different weightings when using hinted shifts
+
+	* algorithm.h, chunk.h, constraints.h, debugging.h, engine.h, handmodel.h, handmodelx.h, instrumentdefn.h, note.h, types.h, vn_algorithm.h, chunk.cpp, debugging.cpp, engine.cpp, handmodel.cpp, handmodelx.cpp, instrumentdefn.cpp, note.cpp, vn_algorithm.cpp, algorithm.cpp:
+	New file.
+

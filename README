@@ -1,0 +1,26 @@
+README for Holdsworth snapshot
+==============================
+
+To build the test program:
+--------------------------
+
+1) qmake
+
+[On a Mac you probably want to use "qmake -spec macx-g++" to create a Makefile]
+
+2) make
+
+This will create the "fing" executable.
+Run "fing" (no parameters needed); an output file "output.ly"
+is created. Then run Lilypond on that file.
+
+To change the notes input into the engine, check out  "fing --help"
+
+
+To build documentation:
+-----------------------
+
+Run "doxygen" from the same directory as the provided Doxyfile.
+
+
+
