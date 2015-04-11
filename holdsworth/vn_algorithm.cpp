@@ -53,7 +53,7 @@ namespace Holdsworth {
      * where we currently are. It may turn out that staying in the same
      * position is still best.
      */
-    const int vn_cumulative_position_break_threshold = 20;
+    //const int vn_cumulative_position_break_threshold = 20;
 
     /*! \brief The penalty assigned to changing strings.
      */

@@ -104,7 +104,7 @@ GetOpt::GetOpt()
 /**
    \internal
  */
-GetOpt::GetOpt( int offset )
+GetOpt::GetOpt( int /* offset */ )
 {
     if ( !qApp )
 	qFatal( "GetOpt: requires a QApplication instance to be constructed first" );
